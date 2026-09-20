@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Calendar, Users, TrendingUp, Zap, Plus, Clock, ArrowRight, AlertTriangle } from 'lucide-react';
 import KPICard from '../../../components/KPICard/KPICard';
 import AppointmentStatusBadge from '../../../components/AppointmentStatusBadge/AppointmentStatusBadge';
@@ -76,7 +77,7 @@ export default function Dashboard() {
       <div className={styles.scheduleSection}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Today's schedule</h2>
-          <a href="/owner/appointments" className={styles.viewAll}>View all <ArrowRight size={14}/></a>
+          <Link to="/owner/appointments" className={styles.viewAll}>View all <ArrowRight size={14}/></Link>
         </div>
 
         <div className={styles.scheduleTable}>
@@ -131,7 +132,7 @@ export default function Dashboard() {
             <div className={styles.smartWidgetSub}>23 bookings this week · ₹4,850 additional revenue</div>
           </div>
         </div>
-        <a href="/owner/smart-slots" className={styles.smartWidgetLink}>Manage <ArrowRight size={14}/></a>
+        <Link to="/owner/smart-slots" className={styles.smartWidgetLink}>Manage <ArrowRight size={14}/></Link>
       </div>
 
       {/* No-show confirmation */}

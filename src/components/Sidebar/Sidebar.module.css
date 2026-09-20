@@ -1,60 +1,188 @@
-:root { --sidebar-w: 260px; }
+/* ═══════════════════════════════════════════════
+   GROOMLY — Sidebar + Mobile Top Bar
+   Desktop: fixed left sidebar (260px)
+   Mobile ≤ 900px: top bar + slide-in drawer
+═══════════════════════════════════════════════ */
 
-/* Mobile top bar */
-.mobileBar {
+/* ── Mobile top bar — hidden on desktop ── */
+.topBar {
   display: none;
-  position: sticky; top: 0; z-index: 60;
-  height: 60px; padding: 0 20px;
-  background: var(--surface); border-bottom: 1px solid var(--border);
-  align-items: center; justify-content: space-between;
 }
-.mobileLogo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text); font-weight: 800; font-size: 1rem; letter-spacing: 0.04em; }
-.ownerTag { font-size: 0.65rem; background: var(--primary-light); color: var(--primary); padding: 2px 7px; border-radius: var(--radius-full); font-weight: 700; }
-.hamburger { color: var(--text); display: flex; padding: 4px; }
 
-.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 59; }
+/* ── Backdrop ── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 998;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
 
-/* Sidebar */
+/* ═══════════ SIDEBAR ═══════════ */
 .sidebar {
-  position: fixed; left: 0; top: 0; bottom: 0;
-  width: var(--sidebar-w);
-  background: var(--surface);
-  border-right: 1px solid var(--border);
-  display: flex; flex-direction: column;
-  z-index: 60;
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: 260px;
+  background: #ffffff;
+  border-right: 1px solid #e5e4e0;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Drawer header — close button shown only on mobile */
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 18px 14px;
+  border-bottom: 1px solid #eeede9;
+  flex-shrink: 0;
+}
+.drawerLogo { display: flex; align-items: center; gap: 10px; }
+.logoMark {
+  width: 34px; height: 34px;
+  background: #6C47FF; color: #fff;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.logoName { font-size: 0.9rem; font-weight: 800; letter-spacing: 0.05em; color: #0F0E0C; line-height: 1; }
+.logoSub  { font-size: 0.67rem; color: #6B6B66; margin-top: 2px; }
+
+.closeBtn {
+  width: 32px; height: 32px;
+  border-radius: 8px; border: none; background: none;
+  color: #6B6B66; cursor: pointer;
+  display: none; /* only show on mobile */
+  align-items: center; justify-content: center;
+  transition: background 0.15s;
+}
+.closeBtn:hover { background: #F5F4F0; }
+
+/* Salon block */
+.salonBlock {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #eeede9;
+  flex-shrink: 0;
+}
+.salonAvatar {
+  width: 38px; height: 38px;
+  background: #EDE8FF; color: #6C47FF;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; font-weight: 800; flex-shrink: 0;
+}
+.salonName { font-size: 0.875rem; font-weight: 700; color: #0F0E0C; }
+.salonOpen { display: flex; align-items: center; gap: 5px; font-size: 0.7rem; color: #16A34A; margin-top: 2px; }
+.openDot   { width: 6px; height: 6px; background: #16A34A; border-radius: 50%; flex-shrink: 0; }
+
+/* Nav */
+.nav {
+  flex: 1;
+  padding: 10px;
+  display: flex; flex-direction: column; gap: 2px;
   overflow-y: auto;
 }
+.navLink {
+  display: flex; align-items: center; gap: 11px;
+  padding: 10px 11px;
+  border-radius: 10px;
+  font-size: 0.875rem; font-weight: 500;
+  color: #6B6B66;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  position: relative;
+}
+.navLink:hover { background: #F5F4F0; color: #0F0E0C; }
+.navLinkActive { background: #EDE8FF !important; color: #6C47FF !important; font-weight: 600; }
+.navIcon  { flex-shrink: 0; }
+.navLabel { flex: 1; }
+.navChevron { margin-left: auto; opacity: 0; transition: opacity 0.15s; color: #A0A09A; }
+.navLink:hover .navChevron,
+.navLinkActive .navChevron { opacity: 1; }
+.hotBadge {
+  font-size: 0.58rem; font-weight: 800;
+  background: #6C47FF; color: #fff;
+  padding: 2px 6px; border-radius: 999px;
+  letter-spacing: 0.05em;
+}
 
-.logo { display: flex; align-items: center; gap: 12px; padding: 24px 20px 16px; border-bottom: 1px solid var(--border-light); }
-.logoIcon { width: 38px; height: 38px; background: var(--primary); color: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.logoText { font-size: 1rem; font-weight: 800; letter-spacing: 0.05em; color: var(--text); line-height: 1; }
-.logoSub { font-size: 0.7rem; color: var(--text-muted); margin-top: 2px; }
+/* Footer */
+.sidebarFooter {
+  padding: 14px 18px;
+  border-top: 1px solid #eeede9;
+  flex-shrink: 0;
+}
+.backLink {
+  font-size: 0.8rem; color: #6B6B66;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.backLink:hover { color: #6C47FF; }
 
-.salonInfo { display: flex; align-items: center; gap: 10px; padding: 16px 20px; border-bottom: 1px solid var(--border-light); }
-.salonAvatar { width: 40px; height: 40px; background: var(--primary-light); color: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; flex-shrink: 0; }
-.salonName { font-size: 0.875rem; font-weight: 700; color: var(--text); }
-.salonStatus { display: flex; align-items: center; gap: 5px; font-size: 0.75rem; color: var(--success); }
-.dot { width: 6px; height: 6px; background: var(--success); border-radius: 50%; }
-
-.nav { padding: 12px 12px; display: flex; flex-direction: column; gap: 2px; flex: 1; }
-.navItem { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: var(--radius-md); font-size: 0.9rem; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: all var(--transition); position: relative; }
-.navItem:hover { background: var(--surface-2); color: var(--text); }
-.navItem.active { background: var(--primary-light); color: var(--primary); font-weight: 600; }
-.navItem.active .navIcon { color: var(--primary); }
-.navIcon { flex-shrink: 0; }
-.hotBadge { margin-left: auto; font-size: 0.6rem; font-weight: 800; background: var(--primary); color: #fff; padding: 2px 6px; border-radius: var(--radius-full); letter-spacing: 0.04em; }
-
-.footer { padding: 16px 20px; border-top: 1px solid var(--border-light); }
-.customerLink { font-size: 0.8125rem; color: var(--text-muted); text-decoration: none; transition: color var(--transition); }
-.customerLink:hover { color: var(--primary); }
-
+/* ═══════════════════════════════════════════════
+   MOBILE — ≤ 900px
+═══════════════════════════════════════════════ */
 @media (max-width: 900px) {
-  .mobileBar { display: flex; }
-  .sidebar {
-    top: 60px;
-    transform: translateX(-100%);
-    transition: transform var(--transition-slow);
+
+  /* Show mobile top bar */
+  .topBar {
+    display: flex;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 54px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e4e0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    z-index: 997;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   }
-  .sidebar.open { transform: translateX(0); }
-  .logo { display: none; }
+
+  .menuBtn {
+    width: 38px; height: 38px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1.5px solid #e5e4e0; border-radius: 9px;
+    background: none; cursor: pointer; color: #0F0E0C;
+    transition: background 0.15s;
+    flex-shrink: 0;
+  }
+  .menuBtn:hover { background: #F5F4F0; }
+
+  .topLogo {
+    display: flex; align-items: center; gap: 7px;
+    text-decoration: none; color: #0F0E0C;
+    font-weight: 800; font-size: 0.9rem; letter-spacing: 0.04em;
+  }
+  .ownerPill {
+    font-size: 0.6rem; background: #EDE8FF; color: #6C47FF;
+    padding: 2px 7px; border-radius: 999px; font-weight: 700;
+  }
+  .topRight { width: 38px; } /* balance the menu btn */
+
+  /* Sidebar becomes off-canvas drawer */
+  .sidebar {
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.28s ease;
+    box-shadow: none;
+    width: min(280px, 85vw);
+  }
+  .sidebarOpen {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0,0,0,0.18);
+  }
+
+  /* Show close button in drawer header */
+  .closeBtn { display: flex; }
+
+  /* Larger tap targets in nav */
+  .navLink { padding: 12px 13px; font-size: 0.9375rem; }
 }

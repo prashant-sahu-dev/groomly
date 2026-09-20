@@ -1,20 +1,33 @@
 .layout {
   display: flex;
   min-height: 100vh;
-  background: var(--bg);
+  background: #FAFAF8;
 }
 
+/* ── Desktop: content sits to the right of the fixed 260px sidebar ── */
 .main {
   flex: 1;
   margin-left: 260px;
-  padding: 32px;
-  min-height: 100vh;
+  padding: 32px 36px 60px;
+  min-width: 0; /* prevent flex overflow */
+  box-sizing: border-box;
 }
 
+/* ── Tablet ── */
+@media (max-width: 1100px) {
+  .main { padding: 28px 24px 60px; }
+}
+
+/* ── Mobile: sidebar is off-canvas, main takes full width ── */
 @media (max-width: 900px) {
   .main {
     margin-left: 0;
-    padding: 20px 16px;
-    padding-top: 80px; /* account for mobile bar */
+    /* Push content below the 54px fixed top bar */
+    padding: 74px 16px 60px;
+    width: 100%;
   }
+}
+
+@media (max-width: 480px) {
+  .main { padding: 72px 12px 60px; }
 }
