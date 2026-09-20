@@ -1,0 +1,45 @@
+.page { min-height: 100vh; background: var(--bg); display: flex; align-items: center; justify-content: center; padding: 40px 24px; }
+.container { width: 100%; max-width: 560px; }
+.fallback { text-align: center; padding: 80px 24px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+
+.card { background: var(--surface); border-radius: var(--radius-xl); padding: 48px 40px; box-shadow: var(--shadow-xl); display: flex; flex-direction: column; gap: 24px; animation: scaleIn 0.4s ease; }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+.successHeader { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.checkCircle { width: 80px; height: 80px; background: var(--success-light); color: var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: popIn 0.5s 0.2s both; }
+@keyframes popIn { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: scale(1); } }
+.title { font-size: 1.75rem; font-weight: 800; color: var(--text); }
+.subtitle { font-size: 0.9375rem; color: var(--text-muted); }
+
+.bookingId { display: flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--surface-2); border-radius: var(--radius-md); font-size: 0.875rem; color: var(--text-muted); justify-content: center; }
+.bookingId strong { color: var(--text); font-family: monospace; font-size: 0.9375rem; }
+
+.savingsBanner { display: flex; align-items: center; gap: 14px; padding: 18px 20px; background: var(--primary-light); border-radius: var(--radius-lg); border: 1.5px solid var(--primary); color: var(--primary); }
+.savingsBanner svg { flex-shrink: 0; }
+.savingsTitle { font-weight: 700; font-size: 0.9375rem; }
+.savingsAmt { font-size: 0.875rem; opacity: 0.8; margin-top: 2px; }
+
+.detailsCard { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.salonRow { display: flex; align-items: center; gap: 14px; padding: 18px; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+.salonImg { width: 56px; height: 56px; border-radius: var(--radius-md); object-fit: cover; }
+.salonName { font-weight: 700; color: var(--text); }
+.salonAddr { font-size: 0.8125rem; color: var(--text-muted); margin-top: 3px; }
+
+.details { padding: 0 18px; }
+.detailRow { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border-light); }
+.detailIcon { color: var(--text-muted); flex-shrink: 0; }
+.detailLabel { font-size: 0.875rem; color: var(--text-muted); width: 80px; flex-shrink: 0; }
+.detailValue { font-size: 0.9375rem; font-weight: 600; color: var(--text); flex: 1; }
+.priceRow { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+.priceLabel { font-size: 1rem; font-weight: 700; color: var(--text); }
+.priceRight { display: flex; align-items: baseline; gap: 10px; }
+.regularPrice { font-size: 1rem; color: var(--text-light); text-decoration: line-through; }
+.finalPrice { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+
+.actions { display: flex; flex-direction: column; gap: 12px; }
+.primaryBtn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px; background: var(--primary); color: #fff; border-radius: var(--radius-lg); font-size: 1rem; font-weight: 700; text-decoration: none; transition: all var(--transition); }
+.primaryBtn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+.secondaryBtn { display: flex; align-items: center; justify-content: center; padding: 14px; background: var(--surface-2); color: var(--text-secondary); border-radius: var(--radius-lg); font-size: 0.9375rem; font-weight: 600; text-decoration: none; transition: all var(--transition); }
+.secondaryBtn:hover { background: var(--surface-3); }
+
+@media (max-width: 480px) { .card { padding: 32px 20px; } }

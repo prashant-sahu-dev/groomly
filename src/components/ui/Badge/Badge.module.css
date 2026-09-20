@@ -1,0 +1,22 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+.sm { padding: 2px 8px; font-size: 0.7rem; }
+.md { padding: 4px 10px; font-size: 0.75rem; }
+.lg { padding: 6px 14px; font-size: 0.8125rem; }
+
+.default { background: var(--surface-2); color: var(--text-muted); }
+.primary { background: var(--primary-light); color: var(--primary); }
+.success { background: var(--success-light); color: var(--success); }
+.warning { background: var(--warning-light); color: var(--warning); }
+.danger { background: var(--danger-light); color: var(--danger); }
+.smart { background: var(--primary-light); color: var(--primary); }
+.dark { background: var(--text); color: #fff; }
+.men { background: #DBEAFE; color: #1D4ED8; }
+.women { background: #FCE7F3; color: #BE185D; }
+.unisex { background: var(--surface-2); color: var(--text-secondary); }

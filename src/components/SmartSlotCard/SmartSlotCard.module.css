@@ -1,0 +1,31 @@
+.card {
+  background: var(--surface);
+  border: 1.5px solid var(--primary-light);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.card:hover { box-shadow: 0 8px 32px rgba(108,71,255,0.12); transform: translateY(-4px); }
+
+.saveBadge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 10px; background: var(--primary); color: #fff;
+  border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 800;
+  letter-spacing: 0.06em; width: fit-content;
+}
+.salonName { font-size: 0.8125rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.service { font-size: 1.0625rem; font-weight: 700; color: var(--text); }
+.pricing { display: flex; align-items: center; gap: 10px; }
+.regular { font-size: 0.9rem; color: var(--text-light); text-decoration: line-through; }
+.smart { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.02em; }
+.timeRow { display: flex; align-items: center; gap: 6px; font-size: 0.875rem; color: var(--text-secondary); font-weight: 500; }
+.cta {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 11px 20px; background: var(--primary); color: #fff;
+  border-radius: var(--radius-md); font-size: 0.875rem; font-weight: 600;
+  text-decoration: none; margin-top: 4px; transition: background var(--transition), transform var(--transition);
+}
+.cta:hover { background: var(--primary-dark); transform: translateY(-1px); }

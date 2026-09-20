@@ -1,0 +1,46 @@
+.page { display: flex; flex-direction: column; gap: 28px; max-width: 1100px; }
+.header { margin-bottom: 4px; }
+.title { font-size: 1.75rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; }
+.subtitle { font-size: 0.9rem; color: var(--text-muted); margin-top: 4px; }
+
+.kpiRow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.kpi { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+.kpiIcon { width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; }
+.kpiVal { font-size: 2rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; }
+.kpiLabel { font-size: 0.8125rem; color: var(--text-muted); }
+
+/* Chart card */
+.chartCard { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 28px; }
+.chartTitle { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 24px; }
+
+/* Weekly bar chart */
+.barChart { display: flex; align-items: flex-end; gap: 12px; height: 180px; padding-top: 24px; }
+.barGroup { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; height: 100%; }
+.barLabel { font-size: 0.7rem; color: var(--text-muted); font-weight: 600; white-space: nowrap; }
+.barWrap { flex: 1; width: 100%; display: flex; align-items: flex-end; }
+.bar { width: 100%; border-radius: 6px 6px 0 0; transition: height 0.5s ease; min-height: 4px; }
+.dayLabel { font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); }
+
+/* Monthly chart */
+.monthChart { display: flex; flex-direction: column; gap: 14px; }
+.monthRow { display: flex; align-items: center; gap: 16px; }
+.monthName { font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); width: 32px; flex-shrink: 0; }
+.monthBarWrap { flex: 1; height: 10px; background: var(--surface-2); border-radius: var(--radius-full); overflow: hidden; }
+.monthBar { height: 100%; background: var(--primary); border-radius: var(--radius-full); transition: width 0.5s ease; }
+.monthVal { font-size: 0.875rem; font-weight: 700; color: var(--text); width: 56px; text-align: right; flex-shrink: 0; }
+.monthBookings { font-size: 0.75rem; color: var(--text-muted); width: 80px; flex-shrink: 0; }
+
+/* Top services */
+.serviceList { display: flex; flex-direction: column; gap: 16px; }
+.serviceRow { display: flex; align-items: center; gap: 16px; }
+.serviceRank { font-size: 1rem; font-weight: 800; color: var(--text-light); width: 28px; text-align: center; flex-shrink: 0; }
+.serviceInfo { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.serviceName { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+.serviceBarWrap { height: 8px; background: var(--surface-2); border-radius: var(--radius-full); overflow: hidden; }
+.serviceBar { height: 100%; background: var(--primary); border-radius: var(--radius-full); }
+.serviceMeta { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; flex-shrink: 0; min-width: 100px; }
+.serviceBookings { font-size: 0.75rem; color: var(--text-muted); }
+.serviceRevenue { font-size: 0.875rem; font-weight: 700; color: var(--text); }
+
+@media (max-width: 900px) { .kpiRow { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .barChart { gap: 6px; } .monthRow { flex-wrap: wrap; } }

@@ -1,0 +1,19 @@
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600; white-space: nowrap; }
+.dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+.confirmed { background: #DBEAFE; color: #1D4ED8; }
+.confirmed .dot { background: #1D4ED8; }
+.arrived { background: #FEF3C7; color: #92400E; }
+.arrived .dot { background: #D97706; }
+.inService { background: #EDE9FE; color: #5B21B6; }
+.inService .dot { background: #7C3AED; }
+.completed { background: var(--success-light); color: var(--success); }
+.completed .dot { background: var(--success); }
+.cancelled { background: var(--danger-light); color: var(--danger); }
+.cancelled .dot { background: var(--danger); }
+.noShow { background: #FFF7ED; color: #C2410C; }
+.noShow .dot { background: #EA580C; }
+.rescheduled { background: var(--surface-2); color: var(--text-muted); }
+.rescheduled .dot { background: var(--text-light); }
+.default { background: var(--surface-2); color: var(--text-muted); }
+.default .dot { background: var(--text-light); }

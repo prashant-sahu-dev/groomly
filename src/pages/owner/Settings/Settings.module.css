@@ -1,0 +1,36 @@
+.page { display: flex; flex-direction: column; gap: 32px; max-width: 800px; }
+.header { display: flex; align-items: center; justify-content: space-between; }
+.title { font-size: 1.75rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; }
+.saveBtn { display: flex; align-items: center; gap: 8px; padding: 12px 22px; background: var(--primary); color: #fff; border-radius: var(--radius-lg); font-size: 0.9rem; font-weight: 700; font-family: var(--font); cursor: pointer; border: none; transition: all var(--transition); }
+.saveBtn:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+.section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 28px; display: flex; flex-direction: column; gap: 20px; }
+.sectionTitle { font-size: 1rem; font-weight: 700; color: var(--text); padding-bottom: 16px; border-bottom: 1px solid var(--border-light); }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.label { font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); }
+.inputWrap { position: relative; display: flex; align-items: center; }
+.inputIcon { position: absolute; left: 14px; color: var(--text-muted); flex-shrink: 0; }
+.input { width: 100%; padding: 11px 14px 11px 40px; border: 1.5px solid var(--border); border-radius: var(--radius-md); font-size: 0.9375rem; font-family: var(--font); color: var(--text); background: var(--surface); outline: none; transition: border-color var(--transition); }
+.input:focus { border-color: var(--primary); }
+.textarea { width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-md); font-size: 0.9375rem; font-family: var(--font); color: var(--text); background: var(--surface); outline: none; resize: vertical; transition: border-color var(--transition); }
+.textarea:focus { border-color: var(--primary); }
+
+/* Notifications */
+.notifList { display: flex; flex-direction: column; gap: 0; }
+.notifRow { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border-light); }
+.notifRow:last-child { border-bottom: none; }
+.notifIcon { color: var(--text-muted); flex-shrink: 0; }
+.notifInfo { flex: 1; }
+.notifLabel { font-size: 0.9375rem; font-weight: 600; color: var(--text); }
+.notifDesc { font-size: 0.8125rem; color: var(--text-muted); margin-top: 2px; }
+.toggle { width: 48px; height: 26px; border-radius: 13px; border: none; cursor: pointer; transition: background var(--transition); position: relative; flex-shrink: 0; }
+.toggleOn { background: var(--primary); }
+.toggleOff { background: var(--border); }
+.toggleThumb { width: 20px; height: 20px; background: #fff; border-radius: 50%; position: absolute; top: 3px; transition: left var(--transition); box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+.toggleOn .toggleThumb { left: 25px; }
+.toggleOff .toggleThumb { left: 3px; }
+
+.demoNote { padding: 12px 16px; background: var(--warning-light); color: var(--warning); border-radius: var(--radius-md); font-size: 0.875rem; font-weight: 500; }
+
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }

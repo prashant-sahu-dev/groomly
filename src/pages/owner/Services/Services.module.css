@@ -1,0 +1,38 @@
+.page { display: flex; flex-direction: column; gap: 28px; }
+.header { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.title { font-size: 1.75rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; }
+.subtitle { font-size: 0.875rem; color: var(--text-muted); margin-top: 4px; }
+.addBtn { display: flex; align-items: center; gap: 8px; padding: 12px 20px; background: var(--primary); color: #fff; border-radius: var(--radius-lg); font-size: 0.9rem; font-weight: 700; font-family: var(--font); cursor: pointer; border: none; transition: all var(--transition); }
+.addBtn:hover { background: var(--primary-dark); transform: translateY(-1px); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; display: flex; flex-direction: column; gap: 14px; transition: box-shadow var(--transition); position: relative; overflow: hidden; }
+.card:hover { box-shadow: var(--shadow-md); }
+.disabled { opacity: 0.55; }
+.cardTop { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.svcName { font-size: 1rem; font-weight: 700; color: var(--text); }
+.svcDuration { font-size: 0.8125rem; color: var(--text-muted); margin-top: 3px; }
+.cardActions { display: flex; gap: 4px; }
+.iconBtn { width: 32px; height: 32px; border-radius: var(--radius-md); border: 1.5px solid var(--border); background: var(--surface); color: var(--text-muted); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all var(--transition); }
+.iconBtn:hover { border-color: var(--primary); color: var(--primary); }
+.offBtn { color: var(--danger); border-color: var(--danger-light); }
+.pricing { display: flex; gap: 12px; }
+.priceBox { flex: 1; padding: 10px; background: var(--surface-2); border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 4px; }
+.smartBox { background: var(--primary-light); }
+.priceLabel { font-size: 0.7rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; display: flex; align-items: center; gap: 3px; }
+.priceVal { font-size: 1.125rem; font-weight: 700; color: var(--text); }
+.smartVal { font-size: 1.125rem; font-weight: 700; color: var(--primary); }
+.disabledBadge { position: absolute; top: 12px; right: 12px; padding: 2px 8px; background: var(--danger-light); color: var(--danger); border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 700; }
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; display: flex; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(4px); }
+.modal { background: var(--surface); border-radius: var(--radius-xl); padding: 32px; width: 100%; max-width: 480px; box-shadow: var(--shadow-xl); animation: slideUp 0.3s ease; }
+@keyframes slideUp { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+.modalTitle { font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 24px; }
+.form { display: flex; flex-direction: column; gap: 16px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); }
+.input { padding: 11px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-md); font-size: 0.9375rem; font-family: var(--font); color: var(--text); background: var(--surface); outline: none; }
+.input:focus { border-color: var(--primary); }
+.modalActions { display: flex; gap: 12px; margin-top: 8px; }
+.cancelBtn { flex: 1; padding: 13px; border: 1.5px solid var(--border); border-radius: var(--radius-md); font-size: 0.9375rem; font-weight: 600; font-family: var(--font); color: var(--text-secondary); background: var(--surface); cursor: pointer; }
+.submitBtn { flex: 2; padding: 13px; background: var(--primary); color: #fff; border-radius: var(--radius-md); font-size: 0.9375rem; font-weight: 700; font-family: var(--font); cursor: pointer; border: none; transition: all var(--transition); }
+.submitBtn:hover { background: var(--primary-dark); }

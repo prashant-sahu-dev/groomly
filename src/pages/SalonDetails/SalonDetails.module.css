@@ -1,0 +1,88 @@
+.page { padding: 32px 0 80px; min-height: 100vh; background: var(--bg); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.notFound { padding: 80px 24px; text-align: center; }
+.back { display: inline-flex; align-items: center; gap: 6px; font-size: 0.875rem; font-weight: 500; color: var(--text-muted); background: none; cursor: pointer; padding: 8px 0; margin-bottom: 24px; transition: color var(--transition); }
+.back:hover { color: var(--primary); }
+
+/* Gallery */
+.gallery { display: grid; grid-template-columns: 1fr 200px; gap: 12px; margin-bottom: 40px; border-radius: var(--radius-xl); overflow: hidden; height: 420px; }
+.mainImg { overflow: hidden; }
+.mainImg img { width: 100%; height: 100%; object-fit: cover; }
+.thumbs { display: grid; grid-template-rows: repeat(4, 1fr); gap: 12px; }
+.thumb { cursor: pointer; overflow: hidden; border-radius: var(--radius-md); opacity: 0.7; transition: opacity var(--transition); }
+.thumb:hover, .thumb.activeThumb { opacity: 1; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Layout */
+.layout { display: grid; grid-template-columns: 1fr 320px; gap: 48px; align-items: start; }
+
+/* Salon header */
+.salonHeader { margin-bottom: 32px; }
+.badges { display: flex; gap: 8px; margin-bottom: 10px; }
+.salonName { font-size: 2rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; margin-bottom: 12px; }
+.meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.metaItem { display: flex; align-items: center; gap: 5px; font-size: 0.9rem; color: var(--text-secondary); }
+.reviews { color: var(--text-muted); font-size: 0.8125rem; }
+.metaSep { color: var(--text-light); }
+.address { font-size: 0.8125rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+/* Sections */
+.section { margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border-light); }
+.section:last-child { border-bottom: none; }
+.sectionTitle { font-size: 1.125rem; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+.about { font-size: 0.9375rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px; }
+.amenities { display: flex; flex-wrap: wrap; gap: 8px; }
+.amenity { display: flex; align-items: center; gap: 6px; padding: 6px 14px; background: var(--surface-2); border-radius: var(--radius-full); font-size: 0.8125rem; color: var(--text-secondary); }
+
+/* Services */
+.servicesList { display: flex; flex-direction: column; gap: 0; }
+.serviceRow { display: flex; align-items: center; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--border-light); }
+.serviceRow:last-child { border-bottom: none; }
+.serviceInfo { flex: 1; }
+.serviceName { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+.serviceDesc { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 4px; }
+.serviceDuration { font-size: 0.75rem; color: var(--text-light); }
+.servicePrice { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.regularPrice { font-size: 0.875rem; color: var(--text-light); text-decoration: line-through; }
+.smartPrice { font-size: 1.125rem; font-weight: 800; color: var(--primary); }
+.price { font-size: 1.125rem; font-weight: 700; color: var(--text); }
+.bookBtn { padding: 8px 18px; background: var(--primary); color: #fff; border-radius: var(--radius-md); font-size: 0.875rem; font-weight: 600; text-decoration: none; flex-shrink: 0; transition: all var(--transition); }
+.bookBtn:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+/* Slots */
+.slotGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; margin-bottom: 16px; }
+.slot { display: flex; flex-direction: column; align-items: center; padding: 12px 8px; border-radius: var(--radius-md); border: 1.5px solid var(--border); text-decoration: none; transition: all var(--transition); cursor: pointer; }
+.slotTime { font-size: 0.875rem; font-weight: 600; }
+.slotPrice { font-size: 0.75rem; margin-top: 3px; display: flex; align-items: center; gap: 3px; }
+.slotBooked2 { font-size: 0.75rem; color: var(--danger); margin-top: 3px; }
+.slotAvail { background: var(--surface); color: var(--text); border-color: var(--border); }
+.slotAvail:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-light); }
+.slotSmart { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
+.slotSmart:hover { background: var(--primary); color: #fff; }
+.slotBooked { background: var(--surface-2); border-color: var(--border); color: var(--text-light); cursor: not-allowed; }
+.slotLegend { display: flex; gap: 20px; }
+.legendItem { display: flex; align-items: center; gap: 6px; font-size: 0.8125rem; color: var(--text-muted); }
+.legendDot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+/* Booking sidebar */
+.bookingSidebar { position: sticky; top: calc(var(--nav-height) + 20px); }
+.bookingCard { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 28px; box-shadow: var(--shadow-md); display: flex; flex-direction: column; gap: 16px; }
+.bookingPrice { display: flex; align-items: baseline; gap: 6px; }
+.from { font-size: 0.875rem; color: var(--text-muted); }
+.priceMain { font-size: 2rem; font-weight: 800; color: var(--text); }
+.smartBanner { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: var(--primary-light); color: var(--primary); border-radius: var(--radius-md); font-size: 0.875rem; font-weight: 600; }
+.bookNowBtn { display: flex; align-items: center; justify-content: center; padding: 16px; background: var(--primary); color: #fff; border-radius: var(--radius-md); font-size: 1rem; font-weight: 700; text-decoration: none; transition: all var(--transition); }
+.bookNowBtn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 20px var(--primary-glow); }
+.bookingMeta { display: flex; flex-direction: column; gap: 8px; }
+.bookingMetaItem { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--text-muted); }
+
+@media (max-width: 1024px) {
+  .gallery { grid-template-columns: 1fr; height: 300px; }
+  .thumbs { display: none; }
+  .layout { grid-template-columns: 1fr; }
+  .bookingSidebar { position: static; }
+}
+@media (max-width: 600px) {
+  .slotGrid { grid-template-columns: repeat(3, 1fr); }
+  .serviceRow { flex-wrap: wrap; }
+}
